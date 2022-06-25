@@ -31,5 +31,10 @@ def missing_number(nums):
     """
 
     n = len(nums)
-    result = list(set(range(n + 1)).difference(set(nums)))[0]
+
+    nums_sum = 0
+    for num in nums:
+        nums_sum += num
+
+    result = (n * (n + 1)) // 2 - nums_sum
     return result
